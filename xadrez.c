@@ -1,32 +1,64 @@
-#include <stdio.h>
+#include <stdio.h> 
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Requisito: Uso de constantes.
+// Nomes de variaveis/constantes.
+
+const int MOVIMENTOS_BISPO = 5;
+const int MOVIMENTOS_TORRE = 5;
+const int MOVIMENTOS_RAINHA = 8;
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    // Apresentacao usando printf
+    printf("--- Simulacao de Movimentacao de Pecas (usando printf) ---\n\n");
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+   
+    // 1. BISPO (5 casas, diagonal superior direita) - Usando FOR
+    printf("1. Movimentacao do Bispo (usando FOR):\n");
+    
+    // O loop 'for' vai de 1 ate 5
+    for (int i = 1; i <= MOVIMENTOS_BISPO; ++i) {
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+       // o Bispo se move na diagonal (combinacao de Cima e Direita)
+        printf("  Movimento %d: Cima + Direita\n", i); 
+    }
+    
+    printf("--------------------------------\n\n");
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+   
+    // 2. TORRE (5 casas para a direita) - Usando WHILE
+    printf("2. Movimentacao da Torre (usando WHILE):\n");
+    
+    int contador_torre = 0; // Variavel comeca em zero
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    
+    // O loop continua ENQUANTO o contador for menor que 5
+    while (contador_torre < MOVIMENTOS_TORRE) {
+        contador_torre = contador_torre + 1; // variavel
+        
+        // Torre se move reto para a direita.
+        printf("  Movimento %d: Direita\n", contador_torre);
+    }
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    printf("--------------------------------\n\n");
 
-    return 0;
+    
+    // 3. RAINHA (8 casas para a esquerda) - Usando DO-WHILE
+    printf("3. Movimentacao da Rainha (usando DO-WHILE):\n");
+    
+    int contador_rainha = 0; // Variavel comeca em zero
+
+    do {
+        contador_rainha = contador_rainha + 1; // Incrementa
+        
+        
+        // Documentacao: Rainha se move reto para a esquerda.
+        printf("  Movimento %d: Esquerda\n", contador_rainha);
+        
+    } while (contador_rainha < MOVIMENTOS_RAINHA); // Condicao de repeticao
+    
+    printf("--------------------------------\n");
+    printf("Simulacao de movimentos finalizada.\n");
+
+    return 0; 
 }
